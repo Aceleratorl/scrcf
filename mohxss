@@ -1,0 +1,31 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Prison Life By Accelerator", "Sentinel")
+
+local Tab = Window:NewTab("Scripts")
+local ScriptsSection = Tab:NewSection("Scripts")
+ScriptsSection:NewSlider("WalkSpeed", "More speed", 500, 0, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+ScriptsSection:NewSlider("JumpPower", "More jumps", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+ 
+ScriptsSection:NewDropdown("Give Guns", "Give guns the player", {"M9", "Redmington 870", "Option 3"}, function(s)
+
+ 
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver.M9.ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+
+    print(currentOption)
+end)
+
+local Tab = Window:NewTab("IDK")
+local IdkSection = Tab:NewSection("IDK")
